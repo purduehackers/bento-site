@@ -118,8 +118,9 @@ import topic_ferris from "../assets/topics/ferris.webp";
       class="speaker"
       slot="l-vertical">be a speaker</a
     >
-    <p class="bottom-left noselect" slot="bottom-left">topics include:</p>
-    <p class="noselect top-left" slot="top-left">6-9 PM April 11 KRAN 140</p>
+    <p class="bottom-left noselect" slot="bottom-left"><strong>topics include:</strong></p>
+	<p slot="bottom-left">rust crates, rubik's cubes, birds, ios tweaks, blah, blah, blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
+    <p class="noselect top-left" slot="top-left">7-10 PM April 12 KRAN 140</p>
   </Bento>
 
   <div style="position:absolute; z-index: -1; top:0, left:0">
@@ -140,19 +141,22 @@ import topic_ferris from "../assets/topics/ferris.webp";
 
   <div class="background"></div>
   <script>
-    import { playhtml } from "playhtml";
+    import { Image } from "astro:assets";
+import { playhtml } from "playhtml";
 
     playhtml.init({
       cursors: {
         enabled: true,
-        // onCustomCursorRender: (connectionId, element) => {
-        //   console.log("custom cursor render", { connectionId, element });
+        onCustomCursorRender: (connectionId, element) => {
+          console.log("custom cursor render", { connectionId, element });
 
-        //   const el = document.createElement("div");
-        //   el. = "●";
-        //   el.style.fontSize = "20px";
-        //   return el;
-        // },
+          const el = document.createElement("div");
+		  const img = document.createElement("img")
+		  img.setAttribute("src", "/./cursors/pointer.png")
+          el.appendChild(img);
+          el.style.fontSize = "20px";
+          return el;
+        },
       },
     });
   </script>
