@@ -5,6 +5,7 @@ import Bento from "../components/bento.astro";
 import { Dithering } from "@paper-design/shaders-react";
 import Sticker from "../components/sticker.astro";
 import Loader from "../components/loader.astro";
+import { Image } from "astro:assets";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -14,13 +15,13 @@ import Loader from "../components/loader.astro";
     <p slot="hi" class="load">loading...</p>
   </Loader>
   <a href="/hi/" title="rsvp for bento!" class="rsvp noselect">rsvp</a>
-  <img can-move class="sticker" src="/./blobs/blob1.svg" />
-  <img can-move class="sticker" src="/./blobs/blob2.svg" />
-  <img can-move class="sticker" src="/./blobs/blob3.svg" />
-  <img can-move class="sticker logo" src="/./blobs/logo_stick.svg" />
-  <img can-move class="topic" src="/./topics/robin.png" />
-  <img can-move class="topic" src="/./topics/cube.png" />
-  <img can-move class="topic" src="/./topics/ferris.png" />
+  <img width="150px" height="auto"  can-move class="sticker" src="/./blobs/blob1.svg" />
+  <img width="150px" height="auto" can-move class="sticker" src="/./blobs/blob2.svg" />
+  <img width="150px" height="auto" can-move class="sticker" src="/./blobs/blob3.svg" />
+  <img width="150px" height="auto" can-move class="sticker logo" src="/./blobs/logo_stick.svg" />
+  <img width="150px" height="auto" can-move class="topic" src="/./topics/robin.webp" />
+  <img width="150px" height="auto" can-move class="topic" src="/./topics/cube.webp" />
+  <img width="150px" height="auto" can-move class="topic" src="/./topics/ferris.webp" />
   <Bento>
     <div class="top-right noselect" slot="top-right">
       <p title="seen the show? now hear the tell">
