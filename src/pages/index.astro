@@ -70,19 +70,21 @@ import { Image } from "astro:assets";
   </div>
 
   <div class="background"></div>
-  <script type="module" src="https://unpkg.com/playhtml@latest/dist/init.es.js">
+  <script>
+    import { playhtml } from "playhtml";
+
     playhtml.init({
       cursors: {
         enabled: true,
-        room: "domain", // Show cursors across entire site
-        shouldRenderCursor: (presence) => {
-          // Only render cursors from same page
-          return presence.page === window.location.pathname;
+        onCustomCursorRender: (connectionId, element) => {
+          console.log("custom cursor render", { connectionId, element });
+
+          const el = document.createElement("div");
+          el.textContent = "●";
+          el.style.fontSize = "20px";
+          return el;
         },
       },
     });
-
-    // Access global presence data
-    const userCount = window.cursors.allColors.length;
   </script>
 </Layout>
