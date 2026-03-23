@@ -64,6 +64,9 @@
   .rsvp:hover {
     background-color: #ff9191;
     box-shadow: -4px 4px 0 0 #ff0000;
+    
+  }
+  a:hover{
     cursor: url(/./cursors/link.cur), pointer;
   }
 
@@ -98,4 +101,22 @@
   }
   .load {
     font-family: pixel;
+  }
+  .speaker {
+    font-family: pixel;
+    font-size: clamp(18px, 5vw, 24px);
+    position: absolute;
+    z-index: 2;
+    width: 175px;
+    transform:rotate(-15deg);
+    line-height: 30px;
+    border-radius: 100px;
+    background-color: #ff0000;
+    box-shadow: -4px 4px 0 0 rgb(160, 0, 0);
+    top: 90%;
+    left: 60%;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
   }
