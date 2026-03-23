@@ -1,11 +1,88 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
+import Layout from "../layouts/Layout.astro";
+import "../styles/main.css";
+import Bento from "../components/bento.astro";
+import { Dithering } from "@paper-design/shaders-react";
+import Sticker from "../components/sticker.astro";
+import Loader from "../components/loader.astro";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+<Loader>
+	<p slot="hi" class="load">loading...</p>
+</Loader>
+  <a href="" title="rsvp for bento!" class="rsvp noselect">rsvp</a>
+  <img can-move class="sticker" src="/./blobs/blob1.svg" />
+  <img can-move class="sticker" src="/./blobs/blob2.svg" />
+  <img can-move class="sticker" src="/./blobs/blob3.svg" />
+  <img can-move class="sticker logo" src="/./blobs/logo_stick.svg" />
+  <img can-move class="topic" src="/./topics/robin.png" />
+  <img can-move class="topic" src="/./topics/cube.png" />
+  <img can-move class="topic" src="/./topics/ferris.png" />
+  <Bento>
+    <div class="top-right noselect" slot="top-right">
+      <p title="seen the show? now hear the tell">
+        seen the <a
+          title="link to more information about spill (the show)"
+          href="https://spill.purduehackers.com">show?</a
+        >
+      </p>
+      <p>now hear the tell.</p>
+      <img style="pointer-events: none" src="/bento.svg" />
+      <h1 title="heading: bento">bento</h1>
+    </div>
+    <p class="noselect" slot="l-vertical">
+      Do you have a topic or project you just can't shut up about? Want to tell
+      even more people about how amazing it is?
+      <br />
+      <br />
+      Yes, yes you do.
+      <br />
+      <br />
+      We're hosting BENTO, an WWDC-style event where YOU to break the mold on sharing
+      cool and interesting topics with Purdue students.
+      <br />
+      <br />
+      You only need a title and a topic to sign-up. That’s it!
+    </p>
+    <button slot="l-vertical">be a speaker</button>
+    <p class="bottom-left noselect" slot="bottom-left">topics include:</p>
+    <p class="noselect top-left" slot="top-left">6-9 PM April 11 KRAN 140</p>
+  </Bento>
+
+  <div style="position:absolute; z-index: -1; top:0, left:0">
+    <Dithering
+      client:load
+      width={`100vw`}
+      height={`100vh`}
+      colorBack="#FFFAE5"
+      colorFront="#1500ff"
+      shape="warp"
+      type="4x4"
+      size={2.8}
+      speed={0.15}
+      offsetX={-1}
+      offsetY={-1}
+    />
+  </div>
+
+  <div class="background"></div>
+  <script type="module" src="https://unpkg.com/playhtml@latest/dist/init.es.js"
+  >
+  playhtml.init({
+  cursors: {
+    enabled: true,
+    room: "domain", // Show cursors across entire site
+    shouldRenderCursor: (presence) => {
+      // Only render cursors from same page
+      return presence.page === window.location.pathname;
+    },
+  },
+});
+
+// Access global presence data
+const userCount = window.cursors.allColors.length;
+</script>
 </Layout>
