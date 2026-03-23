@@ -6,10 +6,12 @@ import { Dithering } from "@paper-design/shaders-react";
 import Loader from "../components/loader.astro";
 import { Image } from "astro:assets";
 
-import blob1 from "../assets/blobs/blob1.svg";
-import blob2 from "../assets/blobs/blob2.svg";
-import blob3 from "../assets/blobs/blob3.svg";
-import logo_stick from "../assets/blobs/logo_stick.svg";
+import blob1 from "../assets/blobs/blob1.webp";
+import blob2 from "../assets/blobs/blob2.webp";
+import blob3 from "../assets/blobs/blob3.webp";
+import blob4 from "../assets/blobs/blob4.webp";
+import blob5 from "../assets/blobs/blob5.webp";
+import logo_stick from "../assets/blobs/logo.webp";
 import topic_robin from "../assets/topics/robin.webp";
 import topic_cube from "../assets/topics/cube.webp";
 import topic_ferris from "../assets/topics/ferris.webp";
@@ -39,6 +41,20 @@ import topic_ferris from "../assets/topics/ferris.webp";
     alt={""}
     class="sticker"
     src={blob3}
+    {...{ "can-move": true } as any}
+  />
+  <Image
+    width={300}
+    alt={""}
+    class="sticker"
+    src={blob4}
+    {...{ "can-move": true } as any}
+  />
+  <Image
+    width={300}
+    alt={""}
+    class="sticker"
+    src={blob5}
     {...{ "can-move": true } as any}
   />
   <Image
@@ -129,14 +145,14 @@ import topic_ferris from "../assets/topics/ferris.webp";
     playhtml.init({
       cursors: {
         enabled: true,
-        onCustomCursorRender: (connectionId, element) => {
-          console.log("custom cursor render", { connectionId, element });
+        // onCustomCursorRender: (connectionId, element) => {
+        //   console.log("custom cursor render", { connectionId, element });
 
-          const el = document.createElement("div");
-          el.textContent = "●";
-          el.style.fontSize = "20px";
-          return el;
-        },
+        //   const el = document.createElement("div");
+        //   el. = "●";
+        //   el.style.fontSize = "20px";
+        //   return el;
+        // },
       },
     });
   </script>
