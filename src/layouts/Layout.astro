@@ -1,5 +1,4 @@
 ---
-// import "../styles/main.css";
 ---
 
 <!doctype html>
@@ -39,7 +38,7 @@
 	  height: 100%;
 	  background-color: #fffae500;
 	}
-  
+
 	/* Desktop only: center the content and clip overflow */
 	@media screen and (min-width: 501px) {
 	  html,
@@ -50,18 +49,21 @@
 		align-items: center;
 	  }
 	}
-  
+
 	/* Mobile: let the page scroll naturally */
 	@media screen and (max-width: 500px) {
 	  html,
 	  body {
 		overflow-y: auto;
 		overflow-x: hidden;
-		display: block;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: flex-start;
 	  }
 	}
-  
+
 	body:hover {
 	  cursor: url(/./cursors/pointer.png), auto;
 	}
-  </style>
+</style>

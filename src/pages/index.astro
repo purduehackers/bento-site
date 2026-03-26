@@ -73,13 +73,20 @@ import topic_ferris from "../assets/topics/ferris.webp";
       <br />
       You only need a title and a topic to sign-up. That's it!
     </p>
-    <a
-      target="_blank"
-      rel="noopener noreferrer"
-      href="https://purduehackers.notion.site/317181f3b6ed803eba22d22ac4cb7029?pvs=105"
-      class="speaker"
-      slot="l-vertical">be a speaker</a
-    >
+    <div class="button-row" slot="l-vertical">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://purduehackers.notion.site/317181f3b6ed803eba22d22ac4cb7029?pvs=105"
+        class="speaker">be a speaker</a
+      >
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://luma.com/qd2ja4q8"
+        class="rsvp rsvp-mobile noselect">rsvp</a
+      >
+    </div>
     <p class="bottom-left noselect" slot="bottom-left">
       <strong>topics include:</strong>
     </p>
@@ -89,7 +96,7 @@ import topic_ferris from "../assets/topics/ferris.webp";
     <p class="noselect top-left" slot="top-left">7-10 PM April 11 KRAN 140</p>
   </Bento>
 
-  <div style="position:absolute; z-index: -1; top:0, left:0">
+  <div class="dither-bg">
     <Dithering
       client:load
       width={`100vw`}
@@ -105,16 +112,13 @@ import topic_ferris from "../assets/topics/ferris.webp";
     />
   </div>
 
-  <div class="background"></div>
   <script>
     import { playhtml } from "playhtml";
 
     playhtml.init({
       cursors: {
         enabled: true,
-        onCustomCursorRender: (connectionId, element) => {
-          console.log("custom cursor render", { connectionId, element });
-
+        onCustomCursorRender: () => {
           const el = document.createElement("div");
           const img = document.createElement("img");
           img.setAttribute("src", "/./cursors/user-pointer.png");

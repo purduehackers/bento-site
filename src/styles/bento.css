@@ -6,7 +6,6 @@
   box-sizing: border-box;
 }
 
-
 .bento {
   position: relative;
   width: 100%;
@@ -55,7 +54,6 @@
   height: 64%;
 }
 
-/* right vertical strip of the L */
 .cell-bottom-right-a {
   left: 64.1%;
   top: 36%;
@@ -63,10 +61,49 @@
   height: 64%;
 }
 
-/* bottom horizontal strip of the L, below the cutout */
 .cell-bottom-right-b {
-  left: 35.9%; /* 280 / 780 */
-  top: 64%; /* 403 / 630 */
-  width: 28.2%; /* 220 / 780 */
-  height: 36%; /* 227 / 630 */
+  left: 35.9%;
+  top: 64%;
+  width: 28.2%;
+  height: 36%;
+}
+
+/* --- Mobile: stack cells vertically --- */
+@media screen and (max-width: 500px) {
+  .bento-wrapper {
+    padding: 1rem;
+    margin-top: 10vh;
+  }
+
+  .bento {
+    aspect-ratio: unset;
+  }
+
+  .bento-borders {
+    display: none;
+  }
+
+  .bento-content {
+    position: static;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cell {
+    position: static;
+    width: 100%;
+    height: auto;
+    border: 2px solid blue;
+    border-bottom: none;
+    padding: 12px 16px;
+  }
+
+  .cell-top-left { order: 2; }
+  .cell-top-right { order: 1; }
+  .cell-bottom-right-a { order: 3; }
+  .cell-bottom-left {
+    order: 4;
+    border-bottom: 2px solid blue;
+  }
+  .cell-bottom-right-b { display: none; }
 }
