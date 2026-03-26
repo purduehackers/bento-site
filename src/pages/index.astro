@@ -117,37 +117,35 @@ import topic_ferris from "../assets/topics/ferris.webp";
       offsetY={-1}
     />
   </div>
-
+  <!-- playhtml scripting -->
   <script>
     import { playhtml } from "playhtml";
     const logo = document.getElementById("logo-sticker") as any;
-	
+
     logo.defaultData = { x: 0, y: 0 };
 
-    logo.updateElement = ({ element, data }:any) => {
+    logo.updateElement = ({ element, data }: any) => {
       element.style.transform = `translate(${data.x}px, ${data.y}px)`;
     };
 
-    logo.onMount = ({ getData, setData }:any) => {
+    logo.onMount = ({ getData, setData }: any) => {
       logo.addEventListener("mousedown", () => {
-        const onMove = (e:any) => {
+        const onMove = (e: MouseEvent) => {
           const data = getData();
-          const rect = logo.getBoundingClientRect();
+          const w = logo.offsetWidth;
+          const h = logo.offsetHeight;
           const vw = window.innerWidth;
           const vh = window.innerHeight;
 
-          // Compute clamped deltas
+          const baseLeft = logo.offsetLeft;
+          const baseTop = logo.offsetTop;
+
           const rawX = data.x + e.movementX;
           const rawY = data.y + e.movementY;
 
-          const minX = data.x - rect.left;
-          const maxX = data.x + (vw - rect.right);
-          const minY = data.y - rect.top;
-          const maxY = data.y + (vh - rect.bottom);
-
           setData({
-            x: Math.min(Math.max(rawX, minX), maxX),
-            y: Math.min(Math.max(rawY, minY), maxY),
+            x: Math.min(Math.max(rawX, -baseLeft), vw - baseLeft - w),
+            y: Math.min(Math.max(rawY, -baseTop), vh - baseTop - h),
           });
         };
 
@@ -169,12 +167,12 @@ import topic_ferris from "../assets/topics/ferris.webp";
           const img = document.createElement("img");
           img.setAttribute("src", "/./cursors/user-pointer.png");
           el.appendChild(img);
-          el.style.fontSize = "20px";
           return el;
         },
       },
     });
   </script>
+  <!-- sticker scripting -->
   <script>
     const dragElements = document.querySelectorAll<HTMLElement>(".draggable");
 
