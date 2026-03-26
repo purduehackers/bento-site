@@ -38,12 +38,18 @@ import topic_ferris from "../assets/topics/ferris.webp";
     width={300}
     alt={""}
     class="sticker logo"
+    id="logo-sticker"
     src={logo_stick}
-    {...{ "can-move": true } as any}
+    {...{ "can-play": true } as any}
   />
   <Image width={300} alt={""} class="robin draggable topic" src={topic_robin} />
   <Image width={300} alt={""} class="cube draggable topic" src={topic_cube} />
-  <Image width={300} alt={""} class="ferris draggable topic" src={topic_ferris} />
+  <Image
+    width={300}
+    alt={""}
+    class="ferris draggable topic"
+    src={topic_ferris}
+  />
 
   <Bento>
     <div class="top-right noselect" slot="top-right">
@@ -114,7 +120,47 @@ import topic_ferris from "../assets/topics/ferris.webp";
 
   <script>
     import { playhtml } from "playhtml";
+    const logo = document.getElementById("logo-sticker") as any;
+	
+    logo.defaultData = { x: 0, y: 0 };
 
+    logo.updateElement = ({ element, data }:any) => {
+      element.style.transform = `translate(${data.x}px, ${data.y}px)`;
+    };
+
+    logo.onMount = ({ getData, setData }:any) => {
+      logo.addEventListener("mousedown", () => {
+        const onMove = (e:any) => {
+          const data = getData();
+          const rect = logo.getBoundingClientRect();
+          const vw = window.innerWidth;
+          const vh = window.innerHeight;
+
+          // Compute clamped deltas
+          const rawX = data.x + e.movementX;
+          const rawY = data.y + e.movementY;
+
+          const minX = data.x - rect.left;
+          const maxX = data.x + (vw - rect.right);
+          const minY = data.y - rect.top;
+          const maxY = data.y + (vh - rect.bottom);
+
+          setData({
+            x: Math.min(Math.max(rawX, minX), maxX),
+            y: Math.min(Math.max(rawY, minY), maxY),
+          });
+        };
+
+        document.addEventListener("mousemove", onMove);
+        document.addEventListener(
+          "mouseup",
+          () => {
+            document.removeEventListener("mousemove", onMove);
+          },
+          { once: true },
+        );
+      });
+    };
     playhtml.init({
       cursors: {
         enabled: true,
@@ -129,62 +175,37 @@ import topic_ferris from "../assets/topics/ferris.webp";
       },
     });
   </script>
-  <!-- <script>
-    const dragElements = document.querySelectorAll<HTMLElement>(".draggable");
-    function onMouseDrag(event: MouseEvent, element: HTMLElement) {
-      let leftValue = parseInt(window.getComputedStyle(element).left);
-      let topValue = parseInt(window.getComputedStyle(element).top);
-      element.style.left = `${leftValue + event.movementX}px`;
-      element.style.top = `${topValue + event.movementY}px`;
-    }
-
-    dragElements.forEach((element) => {
-      element.addEventListener("mousedown", (e: MouseEvent) => {
-        const onMove = (event: MouseEvent) => onMouseDrag(event, element);
-
-        document.addEventListener("mousemove", onMove);
-        document.addEventListener(
-          "mouseup",
-          () => {
-            document.removeEventListener("mousemove", onMove);
-          },
-          { once: true },
-        );
-      });
-    });
-  </script> -->
   <script>
     const dragElements = document.querySelectorAll<HTMLElement>(".draggable");
- 
+
     function onMouseDrag(event: MouseEvent, element: HTMLElement) {
       let leftValue = parseInt(window.getComputedStyle(element).left);
       let topValue = parseInt(window.getComputedStyle(element).top);
- 
+
       const rect = element.getBoundingClientRect();
       const vw = window.innerWidth;
       const vh = window.innerHeight;
- 
+
       // Compute proposed new position
       let newLeft = leftValue + event.movementX;
       let newTop = topValue + event.movementY;
- 
-      // Clamp: don't let any edge of the element go outside the viewport
-      const minLeft = leftValue - rect.left;                       // left edge at 0
-      const maxLeft = leftValue + (vw - rect.right);              // right edge at vw
-      const minTop  = topValue  - rect.top;                        // top edge at 0
-      const maxTop  = topValue  + (vh - rect.bottom);             // bottom edge at vh
- 
+
+      const minLeft = leftValue - rect.left; // left edge at 0
+      const maxLeft = leftValue + (vw - rect.right); // right edge at vw
+      const minTop = topValue - rect.top; // top edge at 0
+      const maxTop = topValue + (vh - rect.bottom); // bottom edge at vh
+
       newLeft = Math.min(Math.max(newLeft, minLeft), maxLeft);
-      newTop  = Math.min(Math.max(newTop,  minTop),  maxTop);
- 
+      newTop = Math.min(Math.max(newTop, minTop), maxTop);
+
       element.style.left = `${newLeft}px`;
-      element.style.top  = `${newTop}px`;
+      element.style.top = `${newTop}px`;
     }
- 
+
     dragElements.forEach((element) => {
       element.addEventListener("mousedown", (e: MouseEvent) => {
         const onMove = (event: MouseEvent) => onMouseDrag(event, element);
- 
+
         document.addEventListener("mousemove", onMove);
         document.addEventListener(
           "mouseup",
