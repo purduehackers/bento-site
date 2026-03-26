@@ -165,10 +165,12 @@ a:hover {
   left: 18%;
 }
 .cube {
+
   top: 65%;
   left: 25%;
 }
 .ferris {
+clip-path: ellipse(100px 90px);
   top: 65%;
   left: 15%;
 }
