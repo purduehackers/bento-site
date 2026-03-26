@@ -22,43 +22,18 @@ import topic_ferris from "../assets/topics/ferris.webp";
   <Loader>
     <p slot="hi" class="load">loading...</p>
   </Loader>
-  <a target="_blank" rel="noopener noreferrer" href="https://luma.com/qd2ja4q8" title="rsvp for bento!" class="rsvp noselect">rsvp</a>
-  <Image
-    width={300}
-    alt={""}
-	shared
-    class="sticker"
-    src={blob1}
-    {...{ "can-move": true } as any}
-  />
-  <Image
-    width={300}
-    alt={""}
-    class="sticker"
-    src={blob2}
-    {...{ "can-move": true } as any}
-  />
-  <Image
-    width={300}
-    alt={""}
-    class="sticker"
-    src={blob3}
-    {...{ "can-move": true } as any}
-  />
-  <Image
-    width={300}
-    alt={""}
-    class="sticker"
-    src={blob4}
-    {...{ "can-move": true } as any}
-  />
-  <Image
-    width={300}
-    alt={""}
-    class="sticker"
-    src={blob5}
-    {...{ "can-move": true } as any}
-  />
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://luma.com/qd2ja4q8"
+    title="rsvp for bento!"
+    class="rsvp noselect">rsvp</a
+  >
+  <Image width={300} alt={""} class="draggable sticker" src={blob1} />
+  <Image width={300} alt={""} class="draggable sticker" src={blob2} />
+  <Image width={300} alt={""} class="draggable sticker" src={blob3} />
+  <Image width={300} alt={""} class="draggable sticker" src={blob4} />
+  <Image width={300} alt={""} class="draggable sticker" src={blob5} />
   <Image
     width={300}
     alt={""}
@@ -66,33 +41,22 @@ import topic_ferris from "../assets/topics/ferris.webp";
     src={logo_stick}
     {...{ "can-move": true } as any}
   />
-  <Image
-    width={300}
-    alt={""}
-    class="topic"
-    src={topic_robin}
-    {...{ "can-move": true } as any}
-  />
-  <Image
-    width={300}
-    alt={""}
-    class="topic"
-    src={topic_cube}
-    {...{ "can-move": true } as any}
-  />
+  <Image width={300} alt={""} class="draggable topic" src={topic_robin} />
+  <Image width={300} alt={""} class="draggable topic" src={topic_cube} />
   <Image
     width={300}
     alt={""}
     can-move
-    class="topic"
+    class="draggable topic"
     src={topic_ferris}
-    {...{ "can-move": true } as any}
   />
 
   <Bento>
     <div class="top-right noselect" slot="top-right">
       <p title="seen the show? now hear the tell">
-        seen the <a target="_blank" rel="noopener noreferrer"
+        seen the <a
+          target="_blank"
+          rel="noopener noreferrer"
           title="link to more information about spill (the show)"
           href="https://spill.purduehackers.com">show?</a
         >
@@ -115,13 +79,19 @@ import topic_ferris from "../assets/topics/ferris.webp";
       <br />
       You only need a title and a topic to sign-up. That's it!
     </p>
-    <a target="_blank" rel="noopener noreferrer"
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
       href="https://purduehackers.notion.site/317181f3b6ed803eba22d22ac4cb7029?pvs=105"
       class="speaker"
       slot="l-vertical">be a speaker</a
     >
-    <p class="bottom-left noselect" slot="bottom-left"><strong>topics include:</strong></p>
-	<p slot="bottom-left">rust crates, rubik's cubes, birds, ios tweaks, and more!</p>
+    <p class="bottom-left noselect" slot="bottom-left">
+      <strong>topics include:</strong>
+    </p>
+    <p slot="bottom-left">
+      rust crates, rubik's cubes, birds, ios tweaks, and more!
+    </p>
     <p class="noselect top-left" slot="top-left">7-10 PM April 11 KRAN 140</p>
   </Bento>
 
@@ -143,7 +113,7 @@ import topic_ferris from "../assets/topics/ferris.webp";
 
   <div class="background"></div>
   <script>
-import { playhtml } from "playhtml";
+    import { playhtml } from "playhtml";
 
     playhtml.init({
       cursors: {
@@ -152,13 +122,37 @@ import { playhtml } from "playhtml";
           console.log("custom cursor render", { connectionId, element });
 
           const el = document.createElement("div");
-		  const img = document.createElement("img")
-		  img.setAttribute("src", "/./cursors/pointer.png")
+          const img = document.createElement("img");
+          img.setAttribute("src", "/./cursors/pointer.png");
           el.appendChild(img);
           el.style.fontSize = "20px";
           return el;
         },
       },
+    });
+  </script>
+  <script>
+    const dragElements = document.querySelectorAll<HTMLElement>(".draggable");
+    function onMouseDrag(event: MouseEvent, element: HTMLElement) {
+      let leftValue = parseInt(window.getComputedStyle(element).left);
+      let topValue = parseInt(window.getComputedStyle(element).top);
+      element.style.left = `${leftValue + event.movementX}px`;
+      element.style.top = `${topValue + event.movementY}px`;
+    }
+
+    dragElements.forEach((element) => {
+      element.addEventListener("mousedown", (e: MouseEvent) => {
+        const onMove = (event: MouseEvent) => onMouseDrag(event, element);
+
+        document.addEventListener("mousemove", onMove);
+        document.addEventListener(
+          "mouseup",
+          () => {
+            document.removeEventListener("mousemove", onMove);
+          },
+          { once: true },
+        );
+      });
     });
   </script>
 </Layout>
