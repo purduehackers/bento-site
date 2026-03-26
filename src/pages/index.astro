@@ -29,11 +29,11 @@ import topic_ferris from "../assets/topics/ferris.webp";
     title="rsvp for bento!"
     class="rsvp noselect">rsvp</a
   >
-  <Image width={300} alt={""} class="draggable sticker" src={blob1} />
-  <Image width={300} alt={""} class="draggable sticker" src={blob2} />
-  <Image width={300} alt={""} class="draggable sticker" src={blob3} />
-  <Image width={300} alt={""} class="draggable sticker" src={blob4} />
-  <Image width={300} alt={""} class="draggable sticker" src={blob5} />
+  <Image width={300} alt={""} class="blob1 draggable sticker" src={blob1} />
+  <Image width={300} alt={""} class="blob2 draggable sticker" src={blob2} />
+  <Image width={300} alt={""} class="blob3 draggable sticker" src={blob3} />
+  <Image width={300} alt={""} class="blob4 draggable sticker" src={blob4} />
+  <Image width={300} alt={""} class="blob5 draggable sticker" src={blob5} />
   <Image
     width={300}
     alt={""}
@@ -41,14 +41,9 @@ import topic_ferris from "../assets/topics/ferris.webp";
     src={logo_stick}
     {...{ "can-move": true } as any}
   />
-  <Image width={300} alt={""} class="draggable topic" src={topic_robin} />
-  <Image width={300} alt={""} class="draggable topic" src={topic_cube} />
-  <Image
-    width={300}
-    alt={""}
-    class="draggable topic"
-    src={topic_ferris}
-  />
+  <Image width={300} alt={""} class="robin draggable topic" src={topic_robin} />
+  <Image width={300} alt={""} class="cube draggable topic" src={topic_cube} />
+  <Image width={300} alt={""} class="ferris draggable topic" src={topic_ferris} />
 
   <Bento>
     <div class="top-right noselect" slot="top-right">

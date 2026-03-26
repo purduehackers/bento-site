@@ -75,12 +75,12 @@ a:hover {
   user-select: none;
 }
 .sticker {
-    user-select: none;
-    -webkit-user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   position: absolute;
   z-index: 200;
   width: 15%;
@@ -139,4 +139,36 @@ a:hover {
 }
 .top-right a:visited {
   color: blue;
+}
+.blob1 {
+  top: 0%;
+  left: 20%;
+}
+.blob2 {
+  top: 20%;
+  left: 74%;
+}
+.blob3 {
+  top: 60%;
+  left: 40%;
+}
+.blob4 {
+  top: 45%;
+  left: 81%;
+}
+.blob5 {
+  top: 30%;
+  left: 48%;
+}
+.robin {
+  top: 55%;
+  left: 18%;
+}
+.cube {
+  top: 65%;
+  left: 25%;
+}
+.ferris {
+  top: 65%;
+  left: 15%;
 }
