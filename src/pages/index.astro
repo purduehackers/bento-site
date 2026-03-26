@@ -16,6 +16,7 @@ import logo_stick from "../assets/blobs/logo.webp";
 import topic_robin from "../assets/topics/robin.webp";
 import topic_cube from "../assets/topics/cube.webp";
 import topic_ferris from "../assets/topics/ferris.webp";
+import topic_laser from "../assets/topics/lasertag.png";
 ---
 
 <Layout>
@@ -29,27 +30,28 @@ import topic_ferris from "../assets/topics/ferris.webp";
     title="rsvp for bento!"
     class="rsvp noselect">rsvp</a
   >
-  <Image width={300} alt={""} class="blob1 draggable sticker" src={blob1} />
-  <Image width={300} alt={""} class="blob2 draggable sticker" src={blob2} />
-  <Image width={300} alt={""} class="blob3 draggable sticker" src={blob3} />
-  <Image width={300} alt={""} class="blob4 draggable sticker" src={blob4} />
-  <Image width={300} alt={""} class="blob5 draggable sticker" src={blob5} />
+  <Image width={300} alt={"blob sticker"} class="blob1 draggable sticker" src={blob1} />
+  <Image width={300} alt={"blob sticker"} class="blob2 draggable sticker" src={blob2} />
+  <Image width={300} alt={"blob sticker"} class="blob3 draggable sticker" src={blob3} />
+  <Image width={300} alt={"blob sticker"} class="blob4 draggable sticker" src={blob4} />
+  <Image width={300} alt={"blob sticker"} class="blob5 draggable sticker" src={blob5} />
   <Image
     width={300}
-    alt={""}
+    alt={"logo sticker"}
     class="sticker logo"
     id="logo-sticker"
     src={logo_stick}
     {...{ "can-play": true } as any}
   />
-  <Image width={300} alt={""} class="robin draggable topic" src={topic_robin} />
-  <Image width={300} alt={""} class="cube draggable topic" src={topic_cube} />
+  <Image width={300} alt={"robin sticker"} class="robin draggable topic" src={topic_robin} />
+  <Image width={300} alt={"rubiks cube sticker"} class="cube draggable topic" src={topic_cube} />
   <Image
     width={300}
     alt={""}
     class="ferris draggable topic"
     src={topic_ferris}
   />
+  <Image width ={300} alt={"laser tag sticker"} class= "laser draggable topic" src={topic_laser}/>
 
   <Bento>
     <div class="top-right noselect" slot="top-right">
