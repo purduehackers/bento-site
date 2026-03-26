@@ -129,7 +129,7 @@ import topic_ferris from "../assets/topics/ferris.webp";
       },
     });
   </script>
-  <script>
+  <!-- <script>
     const dragElements = document.querySelectorAll<HTMLElement>(".draggable");
     function onMouseDrag(event: MouseEvent, element: HTMLElement) {
       let leftValue = parseInt(window.getComputedStyle(element).left);
@@ -142,6 +142,49 @@ import topic_ferris from "../assets/topics/ferris.webp";
       element.addEventListener("mousedown", (e: MouseEvent) => {
         const onMove = (event: MouseEvent) => onMouseDrag(event, element);
 
+        document.addEventListener("mousemove", onMove);
+        document.addEventListener(
+          "mouseup",
+          () => {
+            document.removeEventListener("mousemove", onMove);
+          },
+          { once: true },
+        );
+      });
+    });
+  </script> -->
+  <script>
+    const dragElements = document.querySelectorAll<HTMLElement>(".draggable");
+ 
+    function onMouseDrag(event: MouseEvent, element: HTMLElement) {
+      let leftValue = parseInt(window.getComputedStyle(element).left);
+      let topValue = parseInt(window.getComputedStyle(element).top);
+ 
+      const rect = element.getBoundingClientRect();
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+ 
+      // Compute proposed new position
+      let newLeft = leftValue + event.movementX;
+      let newTop = topValue + event.movementY;
+ 
+      // Clamp: don't let any edge of the element go outside the viewport
+      const minLeft = leftValue - rect.left;                       // left edge at 0
+      const maxLeft = leftValue + (vw - rect.right);              // right edge at vw
+      const minTop  = topValue  - rect.top;                        // top edge at 0
+      const maxTop  = topValue  + (vh - rect.bottom);             // bottom edge at vh
+ 
+      newLeft = Math.min(Math.max(newLeft, minLeft), maxLeft);
+      newTop  = Math.min(Math.max(newTop,  minTop),  maxTop);
+ 
+      element.style.left = `${newLeft}px`;
+      element.style.top  = `${newTop}px`;
+    }
+ 
+    dragElements.forEach((element) => {
+      element.addEventListener("mousedown", (e: MouseEvent) => {
+        const onMove = (event: MouseEvent) => onMouseDrag(event, element);
+ 
         document.addEventListener("mousemove", onMove);
         document.addEventListener(
           "mouseup",
