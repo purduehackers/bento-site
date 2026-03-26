@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "../styles/main.css";
+import "../styles/bento.css";
 import Bento from "../components/bento.astro";
 import { Dithering } from "@paper-design/shaders-react";
 import Loader from "../components/loader.astro";
@@ -25,6 +26,7 @@ import topic_ferris from "../assets/topics/ferris.webp";
   <Image
     width={300}
     alt={""}
+	shared
     class="sticker"
     src={blob1}
     {...{ "can-move": true } as any}
@@ -114,7 +116,7 @@ import topic_ferris from "../assets/topics/ferris.webp";
       You only need a title and a topic to sign-up. That's it!
     </p>
     <a
-      href="https://purduehackers.notion.site/BENTO-Presentation-Guidelines-317181f3b6ed80789af0f349d89fbba7"
+      href=""
       class="speaker"
       slot="l-vertical">be a speaker</a
     >
@@ -141,7 +143,6 @@ import topic_ferris from "../assets/topics/ferris.webp";
 
   <div class="background"></div>
   <script>
-    import { Image } from "astro:assets";
 import { playhtml } from "playhtml";
 
     playhtml.init({

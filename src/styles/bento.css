@@ -1,0 +1,72 @@
+.bento-wrapper {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+
+.bento {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 780 / 630;
+}
+
+.bento-borders {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bento-content {
+  position: absolute;
+  inset: 0;
+}
+
+.cell {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #fffae5;
+}
+
+.cell-top-left {
+  left: 0;
+  top: 0;
+  width: 27.2%;
+  height: 36%;
+}
+
+.cell-top-right {
+  left: 27.2%;
+  top: 0;
+  width: 72.8%;
+  height: 36%;
+}
+
+.cell-bottom-left {
+  left: 0;
+  top: 36%;
+  width: 35.9%;
+  height: 64%;
+}
+
+/* right vertical strip of the L */
+.cell-bottom-right-a {
+  left: 64.1%;
+  top: 36%;
+  width: 35.9%;
+  height: 64%;
+}
+
+/* bottom horizontal strip of the L, below the cutout */
+.cell-bottom-right-b {
+  left: 35.9%; /* 280 / 780 */
+  top: 64%; /* 403 / 630 */
+  width: 28.2%; /* 220 / 780 */
+  height: 36%; /* 227 / 630 */
+}

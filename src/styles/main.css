@@ -1,153 +1,130 @@
-@media screen and (max-width: 430px) {
-    .sticker {
-        display: none;
-    }
-    .rsvp {
-        font-family: pixel;
-    font-size: 10px;
-    position: absolute;
-    z-index: 2;
-    width: 50px;
-    line-height: 20px;
-    transform: rotate(6.729deg);
-    border-radius: 20px;
-    background-color: #0000ff;
-    box-shadow: -4px 4px 0 0 rgb(2, 7, 90);
-    top: 47%;
-    left: 38%;
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    }
-
-}
 @media screen and (max-width: 800px) {
-
 }
 @font-face {
-    font-family: pixel;
-    src: url(/./PixelHackers.woff2);
-  }
-  @font-face {
-    font-family: sans;
-    src: url(/./PolySans-Relax.woff2);
-  }
-  
-  h1 {
-    margin: 0;
-    font-size: clamp(40px, 6vw, 100px);
-    text-align: left;
-    color: blue;
-    display: none;
-  }
-  p {
-    margin: 0;
-    font-family: sans;
-    color: blue;
-    font-size: clamp(14px, 2vw, 24px);
-  }
-  .top-right p {
-    padding: 0;
-    margin: -5px;
-    font-size: clamp(20px, 3vw, 40px);
-    text-align: right;
-  }
-  .top-right img {
-    position: absolute;
-    bottom: 5%;
-    padding-top: 5%;
-    height: 50%;
-    width: 70%;
-  }
-  .cell-top-left p {
-    position: absolute;
-    bottom: 5%;
-    font-size: clamp(24px, 4vw, 50px);
-    line-height: 95%;
-  }
-  .cell-bottom-left p {
-    font-size: clamp(18px, 2.5vw, 35px);
-    text-align: right;
-  }
-  .rsvp {
-    font-family: pixel;
-    font-size: clamp(36px, 5vw, 75px);
-    position: absolute;
-    z-index: 2;
-    width: 300px;
-    line-height: 105px;
-    transform: rotate(6.729deg);
-    border-radius: 100px;
-    background-color: #0000ff;
-    box-shadow: -4px 4px 0 0 rgb(2, 7, 90);
-    top: 47%;
-    left: 38%;
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-  }
-  .rsvp:hover {
-    background-color: #ff0000;
-    box-shadow: -4px 4px 0 0 #740000;
-    
-  }
-  a:hover{
-    cursor: url(/./cursors/link.cur), pointer;
-  }
+  font-family: pixel;
+  src: url(/./PixelHackers.woff2);
+}
+@font-face {
+  font-family: sans;
+  src: url(/./PolySans-Relax.woff2);
+}
 
-  .noselect {
-    user-select: none;
-  }
-  .sticker {
-    position: absolute;
-    z-index: 200;
-    width: 15%;
-    height: auto;
-    filter: drop-shadow(-4px 4px 0 rgb(0, 0, 255));
-  }
-  .sticker:hover {
-    cursor: url("/./cursors/grab_hover.cur"), grab;
-  }
-  .logo {
-    width: 20%;
-    height: auto;
-    top: 80%;
-    left: 50%;
-  }
-  .topic {
-    position: absolute;
-    z-index: 200;
-    width: 15%;
-    height: auto;
-    filter: drop-shadow(-4px 4px 0 rgb(0, 0, 255));
-  }
-  .topic:hover {
-    cursor: url("/./cursors/grab_hover.cur"), grab;
-  }
-  .load {
-    font-family: pixel;
-  }
-  .speaker {
-    font-family: pixel;
-    font-size: clamp(18px, 5vw, 24px);
-    position: absolute;
-    z-index: 2;
-    width: 175px;
-    transform:rotate(-15deg);
-    line-height: 30px;
-    border-radius: 100px;
-    background-color: #0000ff;
-    box-shadow: -4px 4px 0 0 rgb(2, 7, 90);
-    top: 90%;
-    left: 60%;
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-  }
-  .speaker:hover {
-    background-color: #ff0000;
-    box-shadow: -4px 4px 0 0 #740000;
+h1 {
+  margin: 0;
+  font-size: clamp(40px, 6vw, 100px);
+  text-align: left;
+  color: blue;
+  display: none;
+}
+p {
+  margin: 0;
+  font-family: sans;
+  color: blue;
+  font-size: clamp(14px, 2vw, 24px);
+}
+.top-right p {
+  padding: 0;
+  margin: -5px;
+  font-size: clamp(20px, 3vw, 40px);
+  text-align: right;
+}
+.top-right img {
+  position: absolute;
+  bottom: 5%;
+  padding-top: 5%;
+  height: 50%;
+  width: 70%;
+}
+.cell-top-left p {
+  position: absolute;
+  bottom: 5%;
+  font-size: clamp(24px, 4vw, 50px);
+  line-height: 95%;
+}
+.cell-bottom-left p {
+  font-size: clamp(18px, 2.5vw, 35px);
+  text-align: right;
+}
+.rsvp {
+  font-family: pixel;
+  font-size: clamp(36px, 5vw, 75px);
+  position: absolute;
+  z-index: 2;
+  width: 300px;
+  line-height: 105px;
+  transform: rotate(6.729deg);
+  border-radius: 100px;
+  background-color: #0000ff;
+  box-shadow: -4px 4px 0 0 rgb(2, 7, 90);
+  top: 47%;
+  left: 38%;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+.rsvp:hover {
+  background-color: #ff0000;
+  box-shadow: -4px 4px 0 0 #740000;
+}
+a:hover {
+  cursor: url(/./cursors/link.cur), pointer;
+}
+
+.noselect {
+  user-select: none;
+}
+.sticker {
+  position: absolute;
+  z-index: 200;
+  width: 15%;
+  height: auto;
+  filter: drop-shadow(-4px 4px 0 rgb(0, 0, 255));
+}
+.sticker:hover {
+  cursor: url("/./cursors/grab_hover.cur"), grab;
+}
+.logo {
+  width: 20%;
+  height: auto;
+  top: 80%;
+  left: 50%;
+}
+.topic {
+  position: absolute;
+  z-index: 200;
+  width: 15%;
+  height: auto;
+  filter: drop-shadow(-4px 4px 0 rgb(0, 0, 255));
+}
+.topic:hover {
+  cursor: url("/./cursors/grab_hover.cur"), grab;
+}
+.load {
+  font-family: pixel;
+}
+.speaker {
+  font-family: pixel;
+  font-size: clamp(18px, 5vw, 24px);
+  position: absolute;
+  z-index: 2;
+  width: 175px;
+  transform: rotate(-15deg);
+  line-height: 30px;
+  border-radius: 100px;
+  background-color: #0000ff;
+  box-shadow: -4px 4px 0 0 rgb(2, 7, 90);
+  top: 90%;
+  left: 60%;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+.speaker:hover {
+  background-color: #ff0000;
+  box-shadow: -4px 4px 0 0 #740000;
+}
+.top-right a:visited {
+    color: blue;
   }
