@@ -238,5 +238,7 @@ clip-path: ellipse(100px 90px);
 }
 .nugget {
     top:60%;
-    left:15%
+    left:15%;
+    width: 150px;
+    height:auto;
 }
