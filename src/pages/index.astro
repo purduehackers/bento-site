@@ -17,7 +17,7 @@ import topic_robin from "../assets/topics/robin.webp";
 import topic_cube from "../assets/topics/cube.webp";
 import topic_ferris from "../assets/topics/ferris.webp";
 import topic_laser from "../assets/topics/lasertag.png";
-import topic_nugget from "../assets/topics/big_nugget.png"
+import topic_nugget from "../assets/topics/big_nugget.png";
 ---
 
 <Layout>
@@ -31,29 +31,73 @@ import topic_nugget from "../assets/topics/big_nugget.png"
     title="rsvp for bento!"
     class="rsvp noselect">rsvp</a
   >
-  <Image width={300} alt={"blob sticker"} class="blob1 draggable sticker" src={blob1} />
-  <Image width={300} alt={"blob sticker"} class="blob2 draggable sticker" src={blob2} />
-  <Image width={300} alt={"blob sticker"} class="blob3 draggable sticker" src={blob3} />
-  <Image width={300} alt={"blob sticker"} class="blob4 draggable sticker" src={blob4} />
-  <Image width={300} alt={"blob sticker"} class="blob5 draggable sticker" src={blob5} />
+  <Image
+    width={300}
+    alt={"blob sticker"}
+    class="blob1 draggable sticker"
+    src={blob1}
+  />
+  <Image
+    width={300}
+    alt={"blob sticker"}
+    class="blob2 draggable sticker"
+    src={blob2}
+  />
+  <Image
+    width={300}
+    alt={"blob sticker"}
+    class="blob3 draggable sticker"
+    src={blob3}
+  />
+  <Image
+    width={300}
+    alt={"blob sticker"}
+    class="blob4 draggable sticker"
+    src={blob4}
+  />
+  <Image
+    width={300}
+    alt={"blob sticker"}
+    class="blob5 draggable sticker"
+    src={blob5}
+  />
   <Image
     width={300}
     alt={"logo sticker"}
-    class="sticker logo"
+    class="sticker draggable logo"
     id="logo-sticker"
     src={logo_stick}
-    {...{ "can-play": true } as any}
   />
-  <Image width={300} alt={"robin sticker"} class="robin draggable topic" src={topic_robin} />
-  <Image width={300} alt={"rubiks cube sticker"} class="cube draggable topic" src={topic_cube} />
+  <Image
+    width={300}
+    alt={"robin sticker"}
+    class="robin draggable topic"
+    src={topic_robin}
+  />
+  <Image
+    width={300}
+    alt={"rubiks cube sticker"}
+    class="cube draggable topic"
+    src={topic_cube}
+  />
   <Image
     width={300}
     alt={""}
     class="ferris draggable topic"
     src={topic_ferris}
   />
-  <Image width="300" alt={"nugget sticker"} class="nugget draggable topic" src={topic_nugget}/>
-  <Image width ={300} alt={"laser tag sticker"} class= "laser draggable topic" src={topic_laser}/>
+  <Image
+    width="300"
+    alt={"nugget sticker"}
+    class="nugget draggable topic"
+    src={topic_nugget}
+  />
+  <Image
+    width={300}
+    alt={"laser tag sticker"}
+    class="laser draggable topic"
+    src={topic_laser}
+  />
 
   <Bento>
     <div class="top-right noselect" slot="top-right">
@@ -70,26 +114,26 @@ import topic_nugget from "../assets/topics/big_nugget.png"
       <h1 title="heading: bento">bento</h1>
     </div>
     <p class="noselect" slot="l-vertical">
-      Do you have a topic or project you just can't shut up about? Want to tell
-      even more people about how amazing it is?
+      Ever wanted to hear people talk about their wacky interests and passion
+      projects?
       <br />
       <br />
       Yes, yes you do.
       <br />
       <br />
-      We're hosting BENTO, a WWDC-style event where YOU break the mold on sharing
+      We're hosting BENTO, a WWDC-style event where people break the mold on sharing
       cool and interesting topics with Purdue students.
       <br />
       <br />
-      You only need a title and a topic to sign-up. That's it!
+      Come hear people talk about their passion projects!
     </p>
     <div class="button-row" slot="l-vertical">
-      <a
+      <!-- <a
         target="_blank"
         rel="noopener noreferrer"
         href="https://purduehackers.notion.site/317181f3b6ed803eba22d22ac4cb7029?pvs=105"
         class="speaker">be a speaker</a
-      >
+      > -->
       <a
         target="_blank"
         rel="noopener noreferrer"
@@ -124,45 +168,45 @@ import topic_nugget from "../assets/topics/big_nugget.png"
   <!-- playhtml scripting -->
   <script>
     import { playhtml } from "playhtml";
-    const logo = document.getElementById("logo-sticker") as any;
+    //const logo = document.getElementById("logo-sticker") as any;
 
-    logo.defaultData = { x: 0, y: 0 };
+    //logo.defaultData = { x: 0, y: 0 };
 
-    logo.updateElement = ({ element, data }: any) => {
-      element.style.transform = `translate(${data.x}px, ${data.y}px)`;
-    };
+    //logo.updateElement = ({ element, data }: any) => {
+    //  element.style.transform = `translate(${data.x}px, ${data.y}px)`;
+    //};
 
-    logo.onMount = ({ getData, setData }: any) => {
-      logo.addEventListener("mousedown", () => {
-        const onMove = (e: MouseEvent) => {
-          const data = getData();
-          const w = logo.offsetWidth;
-          const h = logo.offsetHeight;
-          const vw = window.innerWidth;
-          const vh = window.innerHeight;
+    //logo.onMount = ({ getData, setData }: any) => {
+    //  logo.addEventListener("mousedown", () => {
+    //    const onMove = (e: MouseEvent) => {
+    //      const data = getData();
+    //      const w = logo.offsetWidth;
+    //      const h = logo.offsetHeight;
+    //      const vw = window.innerWidth;
+    //      const vh = window.innerHeight;
 
-          const baseLeft = logo.offsetLeft;
-          const baseTop = logo.offsetTop;
+    //      const baseLeft = logo.offsetLeft;
+    //      const baseTop = logo.offsetTop;
 
-          const rawX = data.x + e.movementX;
-          const rawY = data.y + e.movementY;
+    //      const rawX = data.x + e.movementX;
+    //      const rawY = data.y + e.movementY;
 
-          setData({
-            x: Math.min(Math.max(rawX, -baseLeft), vw - baseLeft - w),
-            y: Math.min(Math.max(rawY, -baseTop), vh - baseTop - h),
-          });
-        };
+    //      setData({
+    //        x: Math.min(Math.max(rawX, -baseLeft), vw - baseLeft - w),
+    //        y: Math.min(Math.max(rawY, -baseTop), vh - baseTop - h),
+    //      });
+    //    };
 
-        document.addEventListener("mousemove", onMove);
-        document.addEventListener(
-          "mouseup",
-          () => {
-            document.removeEventListener("mousemove", onMove);
-          },
-          { once: true },
-        );
-      });
-    };
+    //    document.addEventListener("mousemove", onMove);
+    //    document.addEventListener(
+    //      "mouseup",
+    //      () => {
+    //        document.removeEventListener("mousemove", onMove);
+    //      },
+    //      { once: true },
+    //    );
+    //  });
+    //};
     playhtml.init({
       cursors: {
         enabled: true,
