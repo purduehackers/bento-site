@@ -18,6 +18,9 @@ import topic_cube from "../assets/topics/cube.webp";
 import topic_ferris from "../assets/topics/ferris.webp";
 import topic_laser from "../assets/topics/lasertag.png";
 import topic_nugget from "../assets/topics/big_nugget.png";
+import topic_dj from "../assets/topics/cdj.webp";
+import topic_spoon from "../assets/topics/spoon.webp";
+import topic_linux from "../assets/topics/linux.png";
 ---
 
 <Layout>
@@ -98,7 +101,19 @@ import topic_nugget from "../assets/topics/big_nugget.png";
     class="laser draggable topic"
     src={topic_laser}
   />
-
+  <Image 
+  width={300}
+  alt={"sticker of a cdj"} 
+  class="cdj draggable topic"
+  src={topic_dj}/>
+  <Image 
+  alt={"sticker of a spoon"} 
+  class="spoon draggable topic"
+  src={topic_spoon}/>
+  <Image 
+  alt={"sticker of a spoon"} 
+  class="linux draggable topic"
+  src={topic_linux}/>
   <Bento>
     <div class="top-right noselect" slot="top-right">
       <p title="seen the show? now hear the tell">

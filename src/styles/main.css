@@ -233,12 +233,33 @@ clip-path: ellipse(100px 90px);
   left: 15%;
 }
 .laser {
-    top: 55%;
-    left: 15%;
+    top: 60%;
+    left: 30%;
+    rotate: 25deg;
 }
 .nugget {
     top:60%;
-    left:15%;
+    left:10%;
     width: 150px;
     height:auto;
+}
+.spoon {
+  top: 35%;
+  left:12%;
+  width: 50px;
+  rotate: 50deg;
+}
+.cdj {
+  top: 83%;
+  left:20%;
+}
+.linux {
+  width: 100px;
+  rotate:20deg;
+  top: 80%;
+  left:10%;
+}
+.logo {
+  top:62%;
+  left:45%;
 }
