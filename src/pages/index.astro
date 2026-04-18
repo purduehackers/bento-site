@@ -101,17 +101,17 @@ import topic_linux from "../assets/topics/linux.png";
     class="laser draggable topic"
     src={topic_laser}
   />
-  <Image 
+  <Image
   width={300}
-  alt={"sticker of a cdj"} 
+  alt={"sticker of a cdj"}
   class="cdj draggable topic"
   src={topic_dj}/>
-  <Image 
-  alt={"sticker of a spoon"} 
+  <Image
+  alt={"sticker of a spoon"}
   class="spoon draggable topic"
   src={topic_spoon}/>
-  <Image 
-  alt={"sticker of a spoon"} 
+  <Image
+  alt={"sticker of a spoon"}
   class="linux draggable topic"
   src={topic_linux}/>
   <Bento>
@@ -275,6 +275,10 @@ import topic_linux from "../assets/topics/linux.png";
           },
           { once: true },
         );
+        // Disable default browser image drag-and-drop
+        element.addEventListener("dragstart", (e) => e.preventDefault(), {
+          once: true,
+        });
       });
     });
   </script>
