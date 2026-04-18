@@ -21,268 +21,296 @@ import topic_nugget from "../assets/topics/big_nugget.png";
 import topic_dj from "../assets/topics/cdj.webp";
 import topic_spoon from "../assets/topics/spoon.webp";
 import topic_linux from "../assets/topics/linux.png";
+import brochure from "../assets/brochure.png";
 ---
 
 <Layout>
-  <Loader>
-    <p slot="hi" class="load">loading...</p>
-  </Loader>
-  <a
-    target="_blank"
-    rel="noopener noreferrer"
-    href="https://luma.com/qd2ja4q8"
-    title="rsvp for bento!"
-    class="rsvp noselect">rsvp</a
-  >
-  <Image
-    width={300}
-    alt={"blob sticker"}
-    class="blob1 draggable sticker"
-    src={blob1}
-  />
-  <Image
-    width={300}
-    alt={"blob sticker"}
-    class="blob2 draggable sticker"
-    src={blob2}
-  />
-  <Image
-    width={300}
-    alt={"blob sticker"}
-    class="blob3 draggable sticker"
-    src={blob3}
-  />
-  <Image
-    width={300}
-    alt={"blob sticker"}
-    class="blob4 draggable sticker"
-    src={blob4}
-  />
-  <Image
-    width={300}
-    alt={"blob sticker"}
-    class="blob5 draggable sticker"
-    src={blob5}
-  />
-  <Image
-    width={300}
-    alt={"logo sticker"}
-    class="sticker draggable logo"
-    id="logo-sticker"
-    src={logo_stick}
-  />
-  <Image
-    width={300}
-    alt={"robin sticker"}
-    class="robin draggable topic"
-    src={topic_robin}
-  />
-  <Image
-    width={300}
-    alt={"rubiks cube sticker"}
-    class="cube draggable topic"
-    src={topic_cube}
-  />
-  <Image
-    width={300}
-    alt={""}
-    class="ferris draggable topic"
-    src={topic_ferris}
-  />
-  <Image
-    width="300"
-    alt={"nugget sticker"}
-    class="nugget draggable topic"
-    src={topic_nugget}
-  />
-  <Image
-    width={300}
-    alt={"laser tag sticker"}
-    class="laser draggable topic"
-    src={topic_laser}
-  />
-  <Image
-    width={300}
-    alt={"sticker of a cdj"}
-    class="cdj draggable topic"
-    src={topic_dj}
-  />
-  <Image
-    alt={"sticker of a spoon"}
-    class="spoon draggable topic"
-    src={topic_spoon}
-  />
-  <Image
-    alt={"sticker of a spoon"}
-    class="linux draggable topic"
-    src={topic_linux}
-  />
-  <Bento>
-    <div class="top-right noselect" slot="top-right">
-      <p title="seen the show? now hear the tell">
-        seen the <a
-          target="_blank"
-          rel="noopener noreferrer"
-          title="link to more information about spill (the show)"
-          href="https://spill.purduehackers.com">show?</a
-        >
-      </p>
-      <p>now hear the tell.</p>
-      <img style="pointer-events: none" src="/bento.svg" />
-      <h1 title="heading: bento">bento</h1>
-    </div>
-    <p class="noselect" slot="l-vertical">
-      Ever wanted to hear people talk about their wacky interests and passion
-      projects?
-      <br />
-      <br />
-      Yes, yes you do.
-      <br />
-      <br />
-      We're hosting BENTO, a WWDC-style event where people break the mold on sharing
-      cool and interesting topics with Purdue students.
-      <br />
-      <br />
-      Come hear a one of a kind speaking event on pretty much anything!
-    </p>
-    <div class="button-row" slot="l-vertical">
-      <!-- <a
+  <div class="first-screenful">
+    <Loader>
+      <p slot="hi" class="load">loading...</p>
+    </Loader>
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://puhack.horse/bento-video"
+      title="watch BENTO on YouTube!"
+      class="watch noselect draggable">watch</a
+    >
+    <Image
+      width={300}
+      alt={"blob sticker"}
+      class="blob1 draggable sticker"
+      src={blob1}
+    />
+    <Image
+      width={300}
+      alt={"blob sticker"}
+      class="blob2 draggable sticker"
+      src={blob2}
+    />
+    <Image
+      width={300}
+      alt={"blob sticker"}
+      class="blob3 draggable sticker"
+      src={blob3}
+    />
+    <Image
+      width={300}
+      alt={"blob sticker"}
+      class="blob4 draggable sticker"
+      src={blob4}
+    />
+    <Image
+      width={300}
+      alt={"blob sticker"}
+      class="blob5 draggable sticker"
+      src={blob5}
+    />
+    <Image
+      width={300}
+      alt={"logo sticker"}
+      class="sticker draggable logo"
+      id="logo-sticker"
+      src={logo_stick}
+    />
+    <Image
+      width={300}
+      alt={"robin sticker"}
+      class="robin draggable topic"
+      src={topic_robin}
+    />
+    <Image
+      width={300}
+      alt={"rubiks cube sticker"}
+      class="cube draggable topic"
+      src={topic_cube}
+    />
+    <Image
+      width={300}
+      alt={""}
+      class="ferris draggable topic"
+      src={topic_ferris}
+    />
+    <Image
+      width="300"
+      alt={"nugget sticker"}
+      class="nugget draggable topic"
+      src={topic_nugget}
+    />
+    <Image
+      width={300}
+      alt={"laser tag sticker"}
+      class="laser draggable topic"
+      src={topic_laser}
+    />
+    <Image
+      width={300}
+      alt={"sticker of a cdj"}
+      class="cdj draggable topic"
+      src={topic_dj}
+    />
+    <Image
+      alt={"sticker of a spoon"}
+      class="spoon draggable topic"
+      src={topic_spoon}
+    />
+    <Image
+      alt={"sticker of a spoon"}
+      class="linux draggable topic"
+      src={topic_linux}
+    />
+    <Bento>
+      <div class="top-right noselect" slot="top-right">
+        <p title="seen the show? now hear the tell">
+          seen the <a
+            target="_blank"
+            rel="noopener noreferrer"
+            title="link to more information about spill (the show)"
+            href="https://spill.purduehackers.com">show?</a
+          >
+          <br />
+          now hear the tell.
+        </p>
+        <img style="pointer-events: none" src="/bento.svg" />
+        <h1 title="heading: bento">bento</h1>
+      </div>
+      <div class="noselect prose" slot="l-vertical">
+        <p>
+          Ever wanted to hear people talk about their wacky interests and
+          passion projects?
+        </p>
+        <p>Yes, yes you have.</p>
+        <p>
+          We hosted BENTO, an event of lightning talks that breaks the mold on
+          sharing cool and interesting creative-technical stories with Purdue
+          students.
+        </p>
+      </div>
+      <div class="button-row" slot="l-vertical">
+        <!-- <a
         target="_blank"
         rel="noopener noreferrer"
         href="https://purduehackers.notion.site/317181f3b6ed803eba22d22ac4cb7029?pvs=105"
         class="speaker">be a speaker</a
       > -->
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://luma.com/qd2ja4q8"
-        class="rsvp rsvp-mobile noselect">rsvp</a
-      >
-    </div>
-    <p class="bottom-left noselect" slot="bottom-left">
-      <strong>topics include:</strong>
-    </p>
-    <p slot="bottom-left">
-      rust crates, rubik's cubes, birds, ios tweaks, vr laser tag, and more!
-    </p>
-    <p class="noselect top-left" slot="top-left">7-10 PM April 11 KRAN 140</p>
-  </Bento>
-
-  <div class="dither-bg">
-    <Dithering
-      client:load
-      width={`100vw`}
-      height={`100vh`}
-      colorBack="#FFFAE5"
-      colorFront="#1500ff"
-      shape="warp"
-      type="4x4"
-      size={2.8}
-      speed={0.15}
-      offsetX={-1}
-      offsetY={-1}
-    />
+        <a
+          target="_blank"
+          rel="noopener"
+          href="https://puhack.horse/bento-video"
+          title="watch BENTO on YouTube!"
+          class="watch watch-mobile noselect">watch</a
+        >
+      </div>
+      <p class="bottom-left noselect" slot="bottom-left">
+        <strong>topics included:</strong>
+      </p>
+      <p slot="bottom-left">
+        rust crates, rubik's cubes, birds, ios tweaks, vr laser tag, and more!
+      </p>
+      <p class="noselect top-left" slot="top-left">7-10 PM April 11 KRAN 140</p>
+    </Bento>
   </div>
-  <!-- playhtml scripting -->
-  <script>
-    import { playhtml } from "playhtml";
-    //const logo = document.getElementById("logo-sticker") as any;
 
-    //logo.defaultData = { x: 0, y: 0 };
+  <div class="bento-wrapper">
+    <div class="bento">
+      <table class="brochure">
+        <tr>
+          <td>
+            <Image class="brochure" alt="BENTO brochure" src={brochure} />
+          </td>
+        </tr>
+        <!-- <tr>
+          <td>
+            <div class="cell-thin">
+              <p>
+                link to all slides can be found <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="#">here</a
+                >
+              </p>
+            </div>
+          </td>
+        </tr> -->
+      </table>
+    </div>
 
-    //logo.updateElement = ({ element, data }: any) => {
-    //  element.style.transform = `translate(${data.x}px, ${data.y}px)`;
-    //};
+    <div class="dither-bg">
+      <Dithering
+        client:load
+        width={`100vw`}
+        height={`100vh`}
+        colorBack="#FFFAE5"
+        colorFront="#1500ff"
+        shape="warp"
+        type="4x4"
+        size={2.8}
+        speed={0.15}
+        offsetX={-1}
+        offsetY={-1}
+      />
+    </div>
+    <!-- playhtml scripting -->
+    <script>
+      import { playhtml } from "playhtml";
+      //const logo = document.getElementById("logo-sticker") as any;
 
-    //logo.onMount = ({ getData, setData }: any) => {
-    //  logo.addEventListener("mousedown", () => {
-    //    const onMove = (e: MouseEvent) => {
-    //      const data = getData();
-    //      const w = logo.offsetWidth;
-    //      const h = logo.offsetHeight;
-    //      const vw = window.innerWidth;
-    //      const vh = window.innerHeight;
+      //logo.defaultData = { x: 0, y: 0 };
 
-    //      const baseLeft = logo.offsetLeft;
-    //      const baseTop = logo.offsetTop;
+      //logo.updateElement = ({ element, data }: any) => {
+      //  element.style.transform = `translate(${data.x}px, ${data.y}px)`;
+      //};
 
-    //      const rawX = data.x + e.movementX;
-    //      const rawY = data.y + e.movementY;
+      //logo.onMount = ({ getData, setData }: any) => {
+      //  logo.addEventListener("mousedown", () => {
+      //    const onMove = (e: MouseEvent) => {
+      //      const data = getData();
+      //      const w = logo.offsetWidth;
+      //      const h = logo.offsetHeight;
+      //      const vw = window.innerWidth;
+      //      const vh = window.innerHeight;
 
-    //      setData({
-    //        x: Math.min(Math.max(rawX, -baseLeft), vw - baseLeft - w),
-    //        y: Math.min(Math.max(rawY, -baseTop), vh - baseTop - h),
-    //      });
-    //    };
+      //      const baseLeft = logo.offsetLeft;
+      //      const baseTop = logo.offsetTop;
 
-    //    document.addEventListener("mousemove", onMove);
-    //    document.addEventListener(
-    //      "mouseup",
-    //      () => {
-    //        document.removeEventListener("mousemove", onMove);
-    //      },
-    //      { once: true },
-    //    );
-    //  });
-    //};
-    playhtml.init({
-      cursors: {
-        enabled: true,
-        onCustomCursorRender: () => {
-          const el = document.createElement("div");
-          const img = document.createElement("img");
-          img.setAttribute("src", "/./cursors/user-pointer.png");
-          el.appendChild(img);
-          return el;
-        },
-      },
-    });
-  </script>
-  <!-- sticker scripting -->
-  <script>
-    const dragElements = document.querySelectorAll<HTMLElement>(".draggable");
+      //      const rawX = data.x + e.movementX;
+      //      const rawY = data.y + e.movementY;
 
-    function onMouseDrag(event: MouseEvent, element: HTMLElement) {
-      let leftValue = parseInt(window.getComputedStyle(element).left);
-      let topValue = parseInt(window.getComputedStyle(element).top);
+      //      setData({
+      //        x: Math.min(Math.max(rawX, -baseLeft), vw - baseLeft - w),
+      //        y: Math.min(Math.max(rawY, -baseTop), vh - baseTop - h),
+      //      });
+      //    };
 
-      const rect = element.getBoundingClientRect();
-      const vw = window.innerWidth;
-      const vh = window.innerHeight;
-
-      // Compute proposed new position
-      let newLeft = leftValue + event.movementX;
-      let newTop = topValue + event.movementY;
-
-      const minLeft = leftValue - rect.left; // left edge at 0
-      const maxLeft = leftValue + (vw - rect.right); // right edge at vw
-      const minTop = topValue - rect.top; // top edge at 0
-      const maxTop = topValue + (vh - rect.bottom); // bottom edge at vh
-
-      newLeft = Math.min(Math.max(newLeft, minLeft), maxLeft);
-      newTop = Math.min(Math.max(newTop, minTop), maxTop);
-
-      element.style.left = `${newLeft}px`;
-      element.style.top = `${newTop}px`;
-    }
-
-    dragElements.forEach((element) => {
-      element.addEventListener("mousedown", (e: MouseEvent) => {
-        const onMove = (event: MouseEvent) => onMouseDrag(event, element);
-
-        document.addEventListener("mousemove", onMove);
-        document.addEventListener(
-          "mouseup",
-          () => {
-            document.removeEventListener("mousemove", onMove);
+      //    document.addEventListener("mousemove", onMove);
+      //    document.addEventListener(
+      //      "mouseup",
+      //      () => {
+      //        document.removeEventListener("mousemove", onMove);
+      //      },
+      //      { once: true },
+      //    );
+      //  });
+      //};
+      playhtml.init({
+        cursors: {
+          enabled: true,
+          onCustomCursorRender: () => {
+            const el = document.createElement("div");
+            const img = document.createElement("img");
+            img.setAttribute("src", "/./cursors/user-pointer.png");
+            el.appendChild(img);
+            return el;
           },
-          { once: true },
-        );
-        // Disable default browser image drag-and-drop
-        element.addEventListener("dragstart", (e) => e.preventDefault(), {
-          once: true,
+        },
+      });
+    </script>
+    <!-- sticker scripting -->
+    <script>
+      const dragElements = document.querySelectorAll<HTMLElement>(".draggable");
+
+      function onMouseDrag(event: MouseEvent, element: HTMLElement) {
+        let leftValue = parseInt(window.getComputedStyle(element).left);
+        let topValue = parseInt(window.getComputedStyle(element).top);
+
+        const rect = element.getBoundingClientRect();
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+
+        // Compute proposed new position
+        let newLeft = leftValue + event.movementX;
+        let newTop = topValue + event.movementY;
+
+        const minLeft = leftValue - rect.left; // left edge at 0
+        const maxLeft = leftValue + (vw - rect.right); // right edge at vw
+        const minTop = topValue - rect.top; // top edge at 0
+        const maxTop = topValue + (vh - rect.bottom); // bottom edge at vh
+
+        newLeft = Math.min(Math.max(newLeft, minLeft), maxLeft);
+        newTop = Math.min(Math.max(newTop, minTop), maxTop);
+
+        element.style.left = `${newLeft}px`;
+        element.style.top = `${newTop}px`;
+      }
+
+      dragElements.forEach((element) => {
+        element.addEventListener("mousedown", (e: MouseEvent) => {
+          const onMove = (event: MouseEvent) => onMouseDrag(event, element);
+
+          document.addEventListener("mousemove", onMove);
+          document.addEventListener(
+            "mouseup",
+            () => {
+              document.removeEventListener("mousemove", onMove);
+            },
+            { once: true },
+          );
+          // Disable default browser image drag-and-drop
+          element.addEventListener("dragstart", (e) => e.preventDefault(), {
+            once: true,
+          });
         });
       });
-    });
-  </script>
+    </script>
+  </div>
 </Layout>
