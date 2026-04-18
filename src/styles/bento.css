@@ -33,6 +33,11 @@
   background-color: #fffae5;
 }
 
+.cell-thin {
+  padding: 4px;
+  background-color: #fffae5;
+}
+
 .cell-top-left {
   left: 0;
   top: 0;

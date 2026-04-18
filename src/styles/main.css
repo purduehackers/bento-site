@@ -20,6 +20,9 @@ p {
   color: blue;
   font-size: clamp(14px, 2vw, 24px);
 }
+.prose p:not(:first-child) {
+  margin-top: 1lh;
+}
 .top-right p {
   padding: 0;
   margin: -5px;
@@ -47,7 +50,7 @@ p {
   text-align: right;
 }
 
-.rsvp {
+.watch {
   font-family: pixel;
   font-size: clamp(36px, 5vw, 75px);
   position: absolute;
@@ -65,7 +68,7 @@ p {
   text-align: center;
   text-decoration: none;
 }
-.rsvp:hover {
+.watch:hover {
   background-color: #ff0000;
   box-shadow: -4px 4px 0 0 #740000;
 }
@@ -128,7 +131,7 @@ a:hover {
   font-family: pixel;
 }
 
-.rsvp-mobile {
+.watch-mobile {
   display: none;
 }
 
@@ -171,11 +174,11 @@ a:hover {
     font-size: clamp(14px, 3.5vw, 20px);
   }
 
-  .rsvp:not(.rsvp-mobile) {
+  .watch:not(.watch-mobile) {
     display: none;
   }
 
-  .rsvp-mobile,
+  .watch-mobile,
   .speaker {
     display: inline-block;
     position: relative;
@@ -189,7 +192,7 @@ a:hover {
     transform: none;
   }
 
-  .rsvp-mobile {
+  .watch-mobile {
     margin-left: 0.5rem;
   }
 
@@ -261,4 +264,29 @@ a:hover {
 .logo {
   top: 62%;
   left: 45%;
+}
+
+.first-screenful {
+  position: relative;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 501px) {
+  .first-screenful {
+    height: 100%;
+    width: 100%;
+  }
+}
+.brochure img {
+  min-width: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+table.brochure {
+  border-collapse: collapse;
+}
+table.brochure td {
+  border: min(0.5vw, 5px) solid blue;
+  box-sizing: border-box;
+  padding: 0px;
 }
