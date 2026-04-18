@@ -223,43 +223,42 @@ a:hover {
   left: 18%;
 }
 .cube {
-
   top: 65%;
   left: 25%;
 }
 .ferris {
-clip-path: ellipse(100px 90px);
+  clip-path: ellipse(100px 90px);
   top: 65%;
   left: 15%;
 }
 .laser {
-    top: 60%;
-    left: 30%;
-    rotate: 25deg;
+  top: 60%;
+  left: 30%;
+  rotate: 25deg;
 }
 .nugget {
-    top:60%;
-    left:10%;
-    width: 150px;
-    height:auto;
+  top: 60%;
+  left: 10%;
+  width: 150px;
+  height: auto;
 }
 .spoon {
   top: 35%;
-  left:12%;
+  left: 12%;
   width: 50px;
   rotate: 50deg;
 }
 .cdj {
   top: 83%;
-  left:20%;
+  left: 20%;
 }
 .linux {
   width: 100px;
-  rotate:20deg;
+  rotate: 20deg;
   top: 80%;
-  left:10%;
+  left: 10%;
 }
 .logo {
-  top:62%;
-  left:45%;
+  top: 62%;
+  left: 45%;
 }

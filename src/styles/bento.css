@@ -98,12 +98,20 @@
     padding: 12px 16px;
   }
 
-  .cell-top-left { order: 2; }
-  .cell-top-right { order: 1; }
-  .cell-bottom-right-a { order: 3; }
+  .cell-top-left {
+    order: 2;
+  }
+  .cell-top-right {
+    order: 1;
+  }
+  .cell-bottom-right-a {
+    order: 3;
+  }
   .cell-bottom-left {
     order: 4;
     border-bottom: 2px solid blue;
   }
-  .cell-bottom-right-b { display: none; }
+  .cell-bottom-right-b {
+    display: none;
+  }
 }

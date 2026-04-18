@@ -1,54 +1,59 @@
-  <div class="bento-wrapper">
-    <div class="bento">
-
-      <!-- CONTENT LAYER -->
-      <div class="bento-content">
-
-        <div class="cell cell-top-left">
-          <slot name="top-left"></slot>
-        </div>
-
-        <div class="cell cell-top-right">
-          <slot name="top-right"></slot>
-        </div>
-
-        <div class="cell cell-bottom-left">
-          <slot name="bottom-left"></slot>
-        </div>
-
-        <div class="cell cell-bottom-right-a">
-          <slot name="l-vertical"></slot>
-        </div>
-
-        <div class="cell cell-bottom-right-b">
-          <!-- bottom-right content here (bottom strip) -->
-        </div>
-
+<div class="bento-wrapper">
+  <div class="bento">
+    <!-- CONTENT LAYER -->
+    <div class="bento-content">
+      <div class="cell cell-top-left">
+        <slot name="top-left" />
       </div>
 
-      <!-- BORDER LAYER (SVG floats on top, purely decorative) -->
-      <svg class="bento-borders" viewBox="0 0 780 630" xmlns="http://www.w3.org/2000/svg">
+      <div class="cell cell-top-right">
+        <slot name="top-right" />
+      </div>
 
-        <!-- OUTER RECTANGLE -->
-        <line x1="2"   y1="0"   x2="2"   y2="630" stroke="blue" stroke-width="4"/>
-        <line x1="778" y1="0"   x2="778" y2="630" stroke="blue" stroke-width="4"/>
-        <line x1="0"   y1="2"   x2="780" y2="2"   stroke="blue" stroke-width="4"/>
-        <line x1="0"   y1="628" x2="780" y2="628" stroke="blue" stroke-width="4"/>
+      <div class="cell cell-bottom-left">
+        <slot name="bottom-left" />
+      </div>
 
-        <!-- HORIZONTAL DIVIDER -->
-        <line x1="0"   y1="227" x2="780" y2="227" stroke="blue" stroke-width="4"/>
+      <div class="cell cell-bottom-right-a">
+        <slot name="l-vertical" />
+      </div>
 
-        <!-- VERTICAL DIVIDER top (x=212, narrower top-left) -->
-        <line x1="212" y1="0"   x2="212" y2="227" stroke="blue" stroke-width="4"/>
-
-        <!-- VERTICAL DIVIDER bottom (x=280, wider bottom-left) -->
-        <line x1="280" y1="227" x2="280" y2="630" stroke="blue" stroke-width="4"/>
-
-        <!-- L-SHAPE inner edges -->
-        <line x1="280" y1="403" x2="502" y2="403" stroke="blue" stroke-width="4"/>
-        <line x1="500" y1="227" x2="500" y2="405" stroke="blue" stroke-width="4"/>
-
-      </svg>
-
+      <div class="cell cell-bottom-right-b">
+        <!-- bottom-right content here (bottom strip) -->
+      </div>
     </div>
+
+    <!-- BORDER LAYER (SVG floats on top, purely decorative) -->
+    <svg
+      class="bento-borders"
+      viewBox="0 0 780 630"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <!-- OUTER RECTANGLE -->
+      <line x1="2" y1="0" x2="2" y2="630" stroke="blue" stroke-width="4"></line>
+      <line x1="778" y1="0" x2="778" y2="630" stroke="blue" stroke-width="4"
+      ></line>
+      <line x1="0" y1="2" x2="780" y2="2" stroke="blue" stroke-width="4"></line>
+      <line x1="0" y1="628" x2="780" y2="628" stroke="blue" stroke-width="4"
+      ></line>
+
+      <!-- HORIZONTAL DIVIDER -->
+      <line x1="0" y1="227" x2="780" y2="227" stroke="blue" stroke-width="4"
+      ></line>
+
+      <!-- VERTICAL DIVIDER top (x=212, narrower top-left) -->
+      <line x1="212" y1="0" x2="212" y2="227" stroke="blue" stroke-width="4"
+      ></line>
+
+      <!-- VERTICAL DIVIDER bottom (x=280, wider bottom-left) -->
+      <line x1="280" y1="227" x2="280" y2="630" stroke="blue" stroke-width="4"
+      ></line>
+
+      <!-- L-SHAPE inner edges -->
+      <line x1="280" y1="403" x2="502" y2="403" stroke="blue" stroke-width="4"
+      ></line>
+      <line x1="500" y1="227" x2="500" y2="405" stroke="blue" stroke-width="4"
+      ></line>
+    </svg>
   </div>
+</div>
