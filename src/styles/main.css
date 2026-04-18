@@ -144,10 +144,10 @@ a:hover {
 
 /* --- Mobile --- */
 @media screen and (max-width: 500px) {
-  /* .sticker,
+  .sticker,
   .topic {
     display: none;
-  } */
+  }
 
   .top-right p {
     font-size: clamp(18px, 5vw, 28px);
