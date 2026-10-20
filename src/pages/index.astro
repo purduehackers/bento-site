@@ -22,6 +22,7 @@ import topic_dj from "../assets/topics/cdj.webp";
 import topic_spoon from "../assets/topics/spoon.webp";
 import topic_linux from "../assets/topics/linux.png";
 import brochure from "../assets/brochure.png";
+import TalkArchive from "../components/TalkArchive.astro";
 ---
 
 <Layout>
@@ -115,7 +116,7 @@ import brochure from "../assets/brochure.png";
       src={topic_spoon}
     />
     <Image
-      alt={"sticker of a spoon"}
+      alt={"Linux penguin sticker"}
       class="linux draggable topic"
       src={topic_linux}
     />
@@ -131,7 +132,7 @@ import brochure from "../assets/brochure.png";
           <br />
           now hear the tell.
         </p>
-        <img style="pointer-events: none" src="/bento.svg" />
+        <img style="pointer-events: none" src="/bento.svg" alt="" aria-hidden="true" />
         <h1 title="heading: bento">bento</h1>
       </div>
       <div class="noselect prose" slot="l-vertical">
@@ -166,8 +167,9 @@ import brochure from "../assets/brochure.png";
       </p>
       <p slot="bottom-left">
         rust crates, rubik's cubes, birds, ios tweaks, vr laser tag, and more!
+        <a href="#talks" class="talks-link">explore the talks ↓</a>
       </p>
-      <p class="noselect top-left" slot="top-left">7-10 PM April 11 KRAN 140</p>
+      <p class="noselect top-left" slot="top-left">7-10 PM April 11, 2026 KRAN 140</p>
     </Bento>
   </div>
 
@@ -176,7 +178,7 @@ import brochure from "../assets/brochure.png";
       <table class="brochure">
         <tr>
           <td>
-            <Image class="brochure" alt="BENTO brochure" src={brochure} />
+            <Image class="brochure" alt="BENTO’s 15-speaker program. Talk titles, speakers, and summaries are listed in the talk archive below." src={brochure} />
           </td>
         </tr>
         <!-- <tr>
@@ -194,6 +196,7 @@ import brochure from "../assets/brochure.png";
         </tr> -->
       </table>
     </div>
+    <TalkArchive />
 
     <div class="dither-bg">
       <Dithering

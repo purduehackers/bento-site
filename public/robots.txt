@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /hi
+
+Sitemap: https://bento.purduehackers.com/sitemap.xml
