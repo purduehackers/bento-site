@@ -1,0 +1,128 @@
+---
+import { talks, recordingUrl } from "../data/talks";
+---
+
+<section class="talk-archive" id="talks" aria-labelledby="talks-heading">
+  <h2 id="talks-heading">hear the tell.</h2>
+  <p class="archive-intro">
+    BENTO brought together 15 speakers at Purdue on April 11, 2026. Explore the
+    talks from the event brochure and
+    <a href={recordingUrl}>watch the full recording</a>. Individual timestamps
+    and further reading are linked where available.
+  </p>
+  <div class="talk-grid">
+    {
+      talks.map((talk) => (
+        <article id={talk.id}>
+          <p class="speaker-name">{talk.speaker}</p>
+          <h3>
+            <a href={`#${talk.id}`}>{talk.title}</a>
+          </h3>
+          <p>{talk.summary}</p>
+          <ul>
+            {talk.start !== undefined && (
+              <li>
+                <a href={`${recordingUrl}&t=${talk.start}s`}>
+                  Watch at {talk.timestamp} ↗
+                </a>
+              </li>
+            )}
+            {talk.links.map((link) => (
+              <li>
+                <a href={link.href}>{link.label} ↗</a>
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))
+    }
+  </div>
+  <footer>
+    <p>
+      <a href="https://www.purduehackers.com/">Purdue Hackers</a> backs highly talented,
+      curious people working on ambitious ideas across software, hardware, and design.
+      BENTO gives people a stage to share what they’re making and thinking about.
+    </p>
+    <nav aria-label="More from Purdue Hackers">
+      <a href="https://spill.purduehackers.com/">spill exhibition</a>
+      <a href="https://burst.purduehackers.com/">BURST exhibition</a>
+      <a href="https://ships.purduehackers.com/">latest ships</a>
+      <a href="https://grants.purduehackers.com/">project funding</a>
+    </nav>
+  </footer>
+</section>
+
+<style>
+  .talk-archive {
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    width: min(1100px, calc(100% - 32px));
+    margin: 48px auto;
+    padding: clamp(20px, 4vw, 48px);
+    background: #fffae5;
+    border: 2px solid blue;
+    color: blue;
+    font-family: sans, sans-serif;
+  }
+  h2 {
+    font-family: pixel, monospace;
+    font-size: clamp(32px, 5vw, 60px);
+    margin: 0 0 24px;
+  }
+  .talk-archive p {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+  .archive-intro {
+    max-width: 70ch;
+  }
+  .talk-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+    margin-top: 36px;
+  }
+  article {
+    border-top: 1px solid blue;
+    padding-top: 20px;
+    scroll-margin-top: 24px;
+    overflow-wrap: anywhere;
+  }
+  .speaker-name {
+    font-weight: bold;
+  }
+  h3 {
+    font-size: 23px;
+    line-height: 1.2;
+    margin: 12px 0;
+  }
+  a,
+  a:visited {
+    color: blue;
+    text-underline-offset: 3px;
+  }
+  a:hover {
+    color: #cf0000;
+  }
+  ul {
+    padding-left: 20px;
+    line-height: 1.6;
+  }
+  footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid blue;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    margin-top: 20px;
+  }
+  @media (max-width: 600px) {
+    .talk-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

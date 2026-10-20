@@ -12,7 +12,13 @@ h1 {
   font-size: clamp(40px, 6vw, 100px);
   text-align: left;
   color: blue;
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 p {
   margin: 0;
@@ -22,6 +28,12 @@ p {
 }
 .prose p:not(:first-child) {
   margin-top: 1lh;
+}
+.talks-link {
+  display: block;
+  font-size: 0.65em;
+  margin-top: 0.5em;
+  color: blue;
 }
 .top-right p {
   padding: 0;

@@ -20,12 +20,24 @@
   }
 </style>
 
+<noscript><style>#loading-overlay { display: none; }</style></noscript>
+
 <script is:inline>
-  window.addEventListener("load", () => {
+  function hideLoader() {
     const overlay = document.getElementById("loading-overlay");
+    if (!overlay) return;
     overlay.classList.add("hidden");
 
     // Remove from DOM after fade completes
-    overlay.addEventListener("transitionend", () => overlay.remove());
-  });
+    overlay.addEventListener("transitionend", () => overlay.remove(), { once: true });
+    // A disabled transition (for example reduced motion) may not emit an event.
+    window.setTimeout(() => overlay.remove(), 400);
+  }
+  // The text is ready with the document. Remote scripts and images must not
+  // keep the talk archive behind a full-screen loading overlay.
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", hideLoader, { once: true });
+  } else {
+    hideLoader();
+  }
 </script>

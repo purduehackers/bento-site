@@ -1,5 +1,6 @@
 ---
-
+const canonical = new URL(Astro.url.pathname, 'https://bento.purduehackers.com');
+const description = 'BENTO: 15 lightning talks from Purdue Hackers on software, hardware, design, and unusual interests. Explore speakers, talk summaries, and the April 11, 2026 recording.';
 ---
 
 <!doctype html>
@@ -9,7 +10,13 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>bento</title>
+    <title>BENTO — talks & ideas from Purdue Hackers</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content="BENTO — talks & ideas from Purdue Hackers" />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
     <link
       rel="preload"
       href="/PixelHackers.woff2"
@@ -26,11 +33,12 @@
     />
   </head>
   <body>
-    <slot />
+    <main><slot /></main>
   </body>
 </html>
 
 <style>
+  main { width: 100%; }
   html,
   body {
     position: relative;
